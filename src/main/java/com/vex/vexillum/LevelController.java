@@ -6,9 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -33,7 +31,7 @@ public class LevelController {
     private Label label;
 
     @FXML
-    public void start() throws FileNotFoundException {
+    public void start() {
         Model.backFlag = 1;
         Model.winningButton = Model.randomizer(1, 4);
         int i = Model.levelRandomizer();

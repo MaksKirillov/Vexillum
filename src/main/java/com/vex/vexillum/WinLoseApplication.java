@@ -12,7 +12,7 @@ public class WinLoseApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Model.backFlag = 1;
-        FXMLLoader fxmlLoader = new FXMLLoader(VexApplication.class.getResource("winlose-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(WinLoseApplication.class.getResource("winlose-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 700);
         if (Model.answerFlag) {
             stage.setTitle("Правильно");

@@ -11,7 +11,7 @@ public class StatsApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(VexApplication.class.getResource("stats-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(StatsApplication.class.getResource("stats-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 700);
         stage.setTitle("Статистика");
         stage.setScene(scene);

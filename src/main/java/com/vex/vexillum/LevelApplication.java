@@ -11,7 +11,7 @@ public class LevelApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(VexApplication.class.getResource("level-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(LevelApplication.class.getResource("level-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 700);
         switch (Model.levelFlag) {
             case 1 -> stage.setTitle("Флаги");
@@ -21,4 +21,5 @@ public class LevelApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
+
 }
