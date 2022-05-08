@@ -31,7 +31,12 @@ public class LevelController {
     private Label label;
 
     @FXML
-    public void start() {
+    private void start() {
+        if (!Model.oneTimeFlag) level();
+        Model.oneTimeFlag = true;
+    }
+
+    private void level() {
         Model.backFlag = 1;
         Model.winningButton = Model.randomizer(1, 4);
         int i = Model.levelRandomizer();
@@ -70,7 +75,7 @@ public class LevelController {
         }
     }
 
-    public void flagStart(int i) {
+    private void flagStart(int i) {
         String path = Model.pathFlags[i];
         Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(path)));
         ImageView imageView = new ImageView(image);
@@ -79,12 +84,12 @@ public class LevelController {
         label.setGraphic(imageView);
     }
 
-    public void factStart(int i) {
+    private void factStart(int i) {
         String fact = Model.facts[i];
         label.setText(fact);
     }
 
-    public void mapStart(int i) {
+    private void mapStart(int i) {
         String path = Model.pathMaps[i];
         Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(path)));
         ImageView imageView = new ImageView(image);
@@ -94,6 +99,7 @@ public class LevelController {
     @FXML
     void handleBackButtonAction(ActionEvent event) throws IOException {
         Model.backButton(backButton);
+        Model.oneTimeFlag = false;
     }
 
     @FXML
@@ -103,6 +109,7 @@ public class LevelController {
         } else {
             Model.wrongButton(answerButton1);
         }
+        Model.oneTimeFlag = false;
     }
 
     @FXML
@@ -112,6 +119,7 @@ public class LevelController {
         } else {
             Model.wrongButton(answerButton2);
         }
+        Model.oneTimeFlag = false;
     }
 
     @FXML
@@ -121,6 +129,7 @@ public class LevelController {
         } else {
             Model.wrongButton(answerButton3);
         }
+        Model.oneTimeFlag = false;
     }
 
     @FXML
@@ -130,6 +139,7 @@ public class LevelController {
         } else {
             Model.wrongButton(answerButton4);
         }
+        Model.oneTimeFlag = false;
     }
 
 }

@@ -19,6 +19,8 @@ public class Model {
 
     public static boolean answerFlag; // true - right, false - wrong
 
+    public static boolean oneTimeFlag = false;
+
     public static final String[] countries = new String[]{
             "Бразилия",
             "Британия",
