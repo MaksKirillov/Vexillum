@@ -63,6 +63,10 @@ public class StatsController {
     private Text AllMaps;
 
     @FXML
+    void initialize() throws FileNotFoundException {
+        statistic();
+    }
+
     public void statistic() throws FileNotFoundException {
         AllAll.setText(getAllAll() + " / " + levelCount * 3);
         AllFacts.setText(getAllFacts() + " / " + levelCount);

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onMouseEntered="#start" prefHeight="534.0" prefWidth="787.0" xmlns="http://javafx.com/javafx"
+<AnchorPane prefHeight="534.0" prefWidth="787.0" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml" fx:controller="com.vex.vexillum.LevelController">
     <VBox alignment="CENTER" prefWidth="668.0" spacing="10.0" style="-fx-background-color: #8D69A1;"
           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"

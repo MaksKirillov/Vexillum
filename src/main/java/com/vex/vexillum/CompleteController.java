@@ -22,7 +22,7 @@ public class CompleteController {
     private ImageView winLoseImage;
 
     @FXML
-    private void start() throws FileNotFoundException {
+    void initialize() throws FileNotFoundException {
         Model.backFlag = 1;
         switch (Model.levelFlag) {
             case 1 -> startFlag();

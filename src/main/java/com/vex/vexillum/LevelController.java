@@ -31,7 +31,7 @@ public class LevelController {
     private Label label;
 
     @FXML
-    private void start() {
+    void initialize() {
         if (!Model.oneTimeFlag) level();
         Model.oneTimeFlag = true;
     }

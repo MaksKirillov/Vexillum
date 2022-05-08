@@ -24,7 +24,7 @@ public class WinLoseController {
     private ImageView winLoseImage;
 
     @FXML
-    public void start() {
+    void initialize() {
         Image image;
         if (Model.answerFlag) {
             image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/titles/rightAnswerImage.png")));

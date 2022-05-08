@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane onMouseEntered="#start" prefHeight="462.0" prefWidth="766.0" style="-fx-background-color: #8D69A1;"
+<AnchorPane prefHeight="462.0" prefWidth="766.0" style="-fx-background-color: #8D69A1;"
             xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.vex.vexillum.CompleteController">
     <VBox alignment="CENTER" prefHeight="462.0" prefWidth="766.0" spacing="40.0" AnchorPane.bottomAnchor="0.0"
