@@ -64,10 +64,10 @@ public class StatsController {
 
     @FXML
     public void statistic() throws FileNotFoundException {
-        AllAll.setText(Integer.toString(getAllAll()));
-        AllFacts.setText(Integer.toString(getAllFacts()));
-        AllFlags.setText(Integer.toString(getAllFlags()));
-        AllMaps.setText(Integer.toString(getAllMaps()));
+        AllAll.setText(getAllAll() + " / " + levelCount * 3);
+        AllFacts.setText(getAllFacts() + " / " + levelCount);
+        AllFlags.setText(getAllFlags() + " / " + levelCount);
+        AllMaps.setText(getAllMaps() + " / " + levelCount);
         RightFacts.setText(Integer.toString(getRightFacts()));
         RightFlags.setText(Integer.toString(getRightFlags()));
         RightMaps.setText(Integer.toString(getRightMaps()));

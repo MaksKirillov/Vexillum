@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class VexApplication extends Application {
@@ -18,7 +19,10 @@ public class VexApplication extends Application {
         primaryStage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        if (Model.getAllFlags() == Model.levelCount) Model.completeFlag = true;
+        if (Model.getAllFacts() == Model.levelCount) Model.completeFact = true;
+        if (Model.getAllMaps() == Model.levelCount) Model.completeMap = true;
         launch();
     }
 

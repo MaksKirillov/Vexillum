@@ -79,13 +79,14 @@ public class LevelController {
         String path = Model.pathFlags[i];
         Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(path)));
         ImageView imageView = new ImageView(image);
-        imageView.setFitWidth(480);
-        imageView.setFitHeight(280);
+        imageView.setScaleX(1.5);
+        imageView.setScaleY(1.5);
         label.setGraphic(imageView);
     }
 
     private void factStart(int i) {
         String fact = Model.facts[i];
+        label.setStyle("-fx-background-color: #B8B3C8");
         label.setText(fact);
     }
 
@@ -93,6 +94,8 @@ public class LevelController {
         String path = Model.pathMaps[i];
         Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(path)));
         ImageView imageView = new ImageView(image);
+        imageView.setFitHeight(400);
+        imageView.setFitWidth(400);
         label.setGraphic(imageView);
     }
 

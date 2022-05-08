@@ -5,7 +5,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -22,207 +21,157 @@
         <ImageView fitHeight="80.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@images/buttons/StatsImage.png"/>
         </ImageView>
-        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="766.0" spacing="10.0"
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="766.0" spacing="20.0"
               style="-fx-background-color: #D0BFD8;">
-            <ImageView fitHeight="34.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@images/buttons/RightImages.png"/>
-            </ImageView>
-            <ImageView fitHeight="34.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@images/buttons/WrongImage.png"/>
-            </ImageView>
-            <ImageView fitHeight="36.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@images/buttons/AllAllImage.png"/>
-            </ImageView>
-        </HBox>
-        <BorderPane prefHeight="50.0" prefWidth="766.0" style="-fx-background-color: #D0BFD8;">
-            <left>
-                <ImageView fitHeight="34.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"
-                           BorderPane.alignment="CENTER">
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                <HBox.margin>
+                    <Insets bottom="10.0" top="70.0"/>
+                </HBox.margin>
+                <ImageView fitHeight="34.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@images/buttons/FlagsImage.png"/>
-                    <BorderPane.margin>
-                        <Insets left="50.0"/>
-                    </BorderPane.margin>
                 </ImageView>
-            </left>
-            <center>
-                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="450.0" spacing="120.0"
-                      BorderPane.alignment="CENTER">
-                    <Text fx:id="RightFlags" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font name="Berlin Sans FB" size="36.0"/>
-                        </font>
-                    </Text>
-                    <Text fx:id="WrongFlags" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font name="Berlin Sans FB" size="36.0"/>
-                        </font>
-                    </Text>
-                    <Text fx:id="AllFlags" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font name="Berlin Sans FB" size="36.0"/>
-                        </font>
-                    </Text>
-                </HBox>
-            </center>
-            <right>
+
+                <ImageView fitHeight="34.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@images/buttons/FactsImage.png"/>
+                </ImageView>
+                <ImageView fitHeight="34.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@images/buttons/MapsImage.png"/>
+                </ImageView>
+                <ImageView fitHeight="34.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@images/buttons/AllImage.png"/>
+                </ImageView>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                <HBox.margin>
+                    <Insets bottom="10.0" top="10.0"/>
+                </HBox.margin>
+                <ImageView fitHeight="34.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@images/buttons/RightImages.png"/>
+                </ImageView>
+                <Text fx:id="RightFlags" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="30.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="RightFacts" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="30.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="RightMaps" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="30.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="AllRight" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="30.0"/>
+                    </font>
+                </Text>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                <HBox.margin>
+                    <Insets bottom="10.0" top="10.0"/>
+                </HBox.margin>
+                <ImageView fitHeight="34.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@images/buttons/WrongImage.png"/>
+                </ImageView>
+                <Text fx:id="WrongFlags" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="30.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="WrongFacts" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="30.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="WrongMaps" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="30.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="AllWrong" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="30.0"/>
+                    </font>
+                </Text>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                <HBox.margin>
+                    <Insets bottom="10.0" top="10.0"/>
+                </HBox.margin>
+                <ImageView fitHeight="36.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@images/buttons/AllAllImage.png"/>
+                </ImageView>
+                <Text fx:id="AllFlags" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="30.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="AllFacts" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="30.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="AllMaps" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="30.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="AllAll" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="30.0"/>
+                    </font>
+                </Text>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="18.0">
+                <HBox.margin>
+                    <Insets bottom="10.0" top="65.0"/>
+                </HBox.margin>
 
                 <Button fx:id="flagResetButton" alignment="CENTER" mnemonicParsing="false"
                         onAction="#handleResetFlagsButtonAction" prefHeight="34.0" prefWidth="100.0"
-                        style="-fx-background-color: #B8B3C8;" BorderPane.alignment="CENTER">
+                        style="-fx-background-color: #B8B3C8;">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                             <Image url="@images/buttons/ResetImage.png"/>
                         </ImageView>
                     </graphic>
-                    <BorderPane.margin>
-                        <Insets right="50.0"/>
-                    </BorderPane.margin>
                 </Button>
-            </right>
-        </BorderPane>
-        <BorderPane prefHeight="50.0" prefWidth="766.0" style="-fx-background-color: #D0BFD8;">
-            <left>
-
-                <ImageView fitHeight="34.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"
-                           BorderPane.alignment="CENTER">
-                    <Image url="@images/buttons/FactsImage.png"/>
-                    <BorderPane.margin>
-                        <Insets left="50.0"/>
-                    </BorderPane.margin>
-                </ImageView>
-            </left>
-            <center>
-                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="450.0" spacing="120.0"
-                      BorderPane.alignment="CENTER">
-                    <Text fx:id="RightFacts" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font name="Berlin Sans FB" size="36.0"/>
-                        </font>
-                    </Text>
-                    <Text fx:id="WrongFacts" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font name="Berlin Sans FB" size="36.0"/>
-                        </font>
-                    </Text>
-                    <Text fx:id="AllFacts" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font name="Berlin Sans FB" size="36.0"/>
-                        </font>
-                    </Text>
-                </HBox>
-            </center>
-            <right>
 
                 <Button fx:id="factsResetButton" alignment="CENTER" mnemonicParsing="false"
                         onAction="#handleResetFactsButtonAction" prefHeight="34.0" prefWidth="100.0"
-                        style="-fx-background-color: #B8B3C8;" BorderPane.alignment="CENTER">
+                        style="-fx-background-color: #B8B3C8;">
 
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                             <Image url="@images/buttons/ResetImage.png"/>
                         </ImageView>
                     </graphic>
-                    <BorderPane.margin>
-                        <Insets right="50.0"/>
-                    </BorderPane.margin>
 
                 </Button>
-            </right>
-        </BorderPane>
-        <BorderPane prefHeight="50.0" prefWidth="766.0" style="-fx-background-color: #D0BFD8;">
-            <left>
-                <ImageView fitHeight="36.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"
-                           BorderPane.alignment="CENTER">
-                    <Image url="@images/buttons/MapsImage.png"/>
-                    <BorderPane.margin>
-                        <Insets left="50.0"/>
-                    </BorderPane.margin>
-                </ImageView>
-            </left>
-            <center>
-                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="450.0" spacing="120.0"
-                      BorderPane.alignment="CENTER">
-                    <Text fx:id="RightMaps" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font name="Berlin Sans FB" size="36.0"/>
-                        </font>
-                    </Text>
-                    <Text fx:id="WrongMaps" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font name="Berlin Sans FB" size="36.0"/>
-                        </font>
-                    </Text>
-                    <Text fx:id="AllMaps" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font name="Berlin Sans FB" size="36.0"/>
-                        </font>
-                    </Text>
-                </HBox>
-            </center>
-            <right>
 
                 <Button fx:id="mapsResetButton" alignment="CENTER" mnemonicParsing="false"
                         onAction="#handleResetMapsButtonAction" prefHeight="34.0" prefWidth="100.0"
-                        style="-fx-background-color: #B8B3C8;" BorderPane.alignment="CENTER">
+                        style="-fx-background-color: #B8B3C8;">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                             <Image url="@images/buttons/ResetImage.png"/>
                         </ImageView>
                     </graphic>
-                    <BorderPane.margin>
-                        <Insets right="50.0"/>
-                    </BorderPane.margin>
                 </Button>
-            </right>
-        </BorderPane>
-        <BorderPane prefHeight="50.0" prefWidth="766.0" style="-fx-background-color: #D0BFD8;">
-            <left>
-                <ImageView fitHeight="34.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true"
-                           BorderPane.alignment="CENTER">
-                    <Image url="@images/buttons/AllImage.png"/>
-                    <BorderPane.margin>
-                        <Insets left="50.0"/>
-                    </BorderPane.margin>
-                </ImageView>
-            </left>
-            <center>
-                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="444.0" spacing="120.0"
-                      BorderPane.alignment="CENTER">
-                    <BorderPane.margin>
-                        <Insets left="40.0"/>
-                    </BorderPane.margin>
-                    <Text fx:id="AllRight" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font name="Berlin Sans FB" size="36.0"/>
-                        </font>
-                    </Text>
-                    <Text fx:id="AllWrong" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font name="Berlin Sans FB" size="36.0"/>
-                        </font>
-                    </Text>
-                    <Text fx:id="AllAll" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font name="Berlin Sans FB" size="36.0"/>
-                        </font>
-                    </Text>
-                </HBox>
-            </center>
-            <right>
                 <Button fx:id="allResetButton" alignment="CENTER" mnemonicParsing="false"
                         onAction="#handleResetAllButtonAction" prefHeight="34.0" prefWidth="100.0"
-                        style="-fx-background-color: #B8B3C8;" BorderPane.alignment="CENTER">
+                        style="-fx-background-color: #B8B3C8;">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                             <Image url="@images/buttons/ResetImage.png"/>
                         </ImageView>
                     </graphic>
-                    <BorderPane.margin>
-                        <Insets right="50.0"/>
-                    </BorderPane.margin>
                 </Button>
-            </right>
-        </BorderPane>
+            </VBox>
+        </HBox>
 
     </VBox>
 
