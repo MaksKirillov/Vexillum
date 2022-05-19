@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.util.Objects;
 
+import static com.vex.vexillum.model.Buttons.*;
 import static com.vex.vexillum.model.Model.*;
 
 public class WinLoseController {

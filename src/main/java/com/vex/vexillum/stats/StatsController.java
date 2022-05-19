@@ -7,7 +7,9 @@ import javafx.scene.text.Text;
 
 import java.io.*;
 
+import static com.vex.vexillum.model.Buttons.backButton;
 import static com.vex.vexillum.model.Model.*;
+import static com.vex.vexillum.model.Stats.*;
 
 public class StatsController {
 

@@ -11,6 +11,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 
+import static com.vex.vexillum.model.Buttons.backButton;
+import static com.vex.vexillum.model.Buttons.statsButton;
 import static com.vex.vexillum.model.Model.*;
 
 public class CompleteController {

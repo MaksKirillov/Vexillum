@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static com.vex.vexillum.model.Buttons.levelButton;
+import static com.vex.vexillum.model.Buttons.statsButton;
 import static com.vex.vexillum.model.Model.*;
 
 public class MenuController {
