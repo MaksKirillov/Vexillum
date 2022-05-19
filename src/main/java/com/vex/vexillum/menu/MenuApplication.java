@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import static com.vex.vexillum.model.Model.*;
+import static com.vex.vexillum.model.Data.*;
 import static com.vex.vexillum.model.Stats.*;
 
 public class MenuApplication extends Application {

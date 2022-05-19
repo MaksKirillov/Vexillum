@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static com.vex.vexillum.model.Model.levelCount;
+import static com.vex.vexillum.model.Data.levelCount;
 
 public class Stats {
 

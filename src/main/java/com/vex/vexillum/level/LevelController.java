@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 import static com.vex.vexillum.model.Buttons.*;
-import static com.vex.vexillum.model.Model.*;
+import static com.vex.vexillum.model.Data.*;
 import static com.vex.vexillum.model.Random.*;
 
 public class LevelController {
@@ -46,7 +46,11 @@ public class LevelController {
         winningButton = randomizer(1, 4);
         int i = levelRandomizer();
         chosenCountry = i;
-        int[] buttons = buttonsRandomizer(i);
+        if (contains(countriesAfricaMiddleEast)) continentFlag = 1;
+        if (contains(countriesAmericas)) continentFlag = 2;
+        if (contains(countriesAsiaOceania)) continentFlag = 3;
+        if (contains(countriesEurope)) continentFlag = 4;
+        int[] buttons = buttonsRandomizer();
         switch (winningButton) {
             case 1 -> {
                 answerButton1.setText(countries[i]);

@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import static com.vex.vexillum.model.Buttons.levelButton;
 import static com.vex.vexillum.model.Buttons.statsButton;
-import static com.vex.vexillum.model.Model.*;
+import static com.vex.vexillum.model.Data.*;
 
 public class MenuController {
 

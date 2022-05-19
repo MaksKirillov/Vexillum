@@ -13,7 +13,7 @@ import java.util.Objects;
 
 import static com.vex.vexillum.model.Buttons.backButton;
 import static com.vex.vexillum.model.Buttons.statsButton;
-import static com.vex.vexillum.model.Model.*;
+import static com.vex.vexillum.model.Data.*;
 
 public class CompleteController {
 
