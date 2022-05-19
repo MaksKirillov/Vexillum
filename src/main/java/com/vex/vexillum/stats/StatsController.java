@@ -1,4 +1,4 @@
-package com.vex.vexillum;
+package com.vex.vexillum.stats;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,7 +7,7 @@ import javafx.scene.text.Text;
 
 import java.io.*;
 
-import static com.vex.vexillum.Model.*;
+import static com.vex.vexillum.model.Model.*;
 
 public class StatsController {
 
@@ -84,7 +84,7 @@ public class StatsController {
 
     @FXML
     public void handleBackButtonAction(ActionEvent event) throws IOException {
-        Model.backButton(backButton);
+        backButton(backButton);
     }
 
     @FXML
@@ -92,7 +92,7 @@ public class StatsController {
         changeNum(0, 0);
         changeNum(0, 1);
         statistic();
-        Model.resetLevel(1);
+        resetLevel(1);
     }
 
     @FXML
@@ -100,7 +100,7 @@ public class StatsController {
         changeNum(0, 2);
         changeNum(0, 3);
         statistic();
-        Model.resetLevel(2);
+        resetLevel(2);
     }
 
     @FXML
@@ -108,7 +108,7 @@ public class StatsController {
         changeNum(0, 4);
         changeNum(0, 5);
         statistic();
-        Model.resetLevel(3);
+        resetLevel(3);
     }
 
     @FXML
@@ -119,9 +119,9 @@ public class StatsController {
         changeNum(0, 3);
         changeNum(0, 4);
         changeNum(0, 5);
-        Model.resetLevel(1);
-        Model.resetLevel(2);
-        Model.resetLevel(3);
+        resetLevel(1);
+        resetLevel(2);
+        resetLevel(3);
         statistic();
     }
 

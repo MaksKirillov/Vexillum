@@ -1,4 +1,4 @@
-package com.vex.vexillum;
+package com.vex.vexillum.level;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,13 +7,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static com.vex.vexillum.model.Model.*;
+
 public class LevelApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LevelApplication.class.getResource("level-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 700);
-        switch (Model.levelFlag) {
+        switch (levelFlag) {
             case 1 -> stage.setTitle("Флаги");
             case 2 -> stage.setTitle("Факты");
             default -> stage.setTitle("Карты");

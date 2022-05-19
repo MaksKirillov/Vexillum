@@ -1,4 +1,4 @@
-package com.vex.vexillum;
+package com.vex.vexillum.stats;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

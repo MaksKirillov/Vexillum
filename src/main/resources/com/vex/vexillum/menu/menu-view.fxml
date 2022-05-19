@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #8D69A1;" xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml" fx:controller="com.vex.vexillum.VexController">
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.vex.vexillum.menu.MenuController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
     <ImageView pickOnBounds="true" preserveRatio="true">
-        <Image url="@images/titles/titleImage.png"/>
+        <Image url="@../images/titles/titleImage.png"/>
     </ImageView>
 
     <Button fx:id="flagsButton" minHeight="50.0" minWidth="400.0" mnemonicParsing="false"
@@ -21,7 +21,7 @@
             style="-fx-background-color: #B8B3C8;" textAlignment="CENTER">
         <graphic>
             <ImageView fitHeight="55.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@images/buttons/FlagsImage.png"/>
+                <Image url="@../images/buttons/FlagsImage.png"/>
             </ImageView>
         </graphic>
     </Button>
@@ -31,7 +31,7 @@
             style="-fx-background-color: #B8B3C8;" textAlignment="CENTER">
         <graphic>
             <ImageView fitHeight="55.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@images/buttons/FactsImage.png"/>
+                <Image url="@../images/buttons/FactsImage.png"/>
             </ImageView>
         </graphic>
     </Button>
@@ -41,7 +41,7 @@
             style="-fx-background-color: #B8B3C8;" textAlignment="CENTER">
         <graphic>
             <ImageView fitHeight="60.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@images/buttons/MapsImage.png"/>
+                <Image url="@../images/buttons/MapsImage.png"/>
             </ImageView>
         </graphic>
     </Button>
@@ -51,7 +51,7 @@
             style="-fx-background-color: #B8B3C8;" textAlignment="CENTER">
         <graphic>
             <ImageView fitHeight="50.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@images/buttons/StatsImage.png"/>
+                <Image url="@../images/buttons/StatsImage.png"/>
             </ImageView>
         </graphic>
     </Button>
@@ -61,7 +61,7 @@
             style="-fx-background-color: #B8B3C8;" textAlignment="CENTER">
         <graphic>
             <ImageView fitHeight="55.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@images/buttons/ExitImage.png"/>
+                <Image url="@../images/buttons/ExitImage.png"/>
             </ImageView>
         </graphic>
     </Button>

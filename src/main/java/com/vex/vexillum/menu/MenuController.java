@@ -1,5 +1,5 @@
 
-package com.vex.vexillum;
+package com.vex.vexillum.menu;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,7 +8,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class VexController {
+import static com.vex.vexillum.model.Model.*;
+
+public class MenuController {
 
     @FXML
     private Button exitButton;
@@ -27,26 +29,26 @@ public class VexController {
 
     @FXML
     void handleFlagsButtonAction(ActionEvent event) throws IOException {
-        Model.levelFlag = 1;
-        Model.levelButton(flagsButton);
+        levelFlag = 1;
+        levelButton(flagsButton);
     }
 
     @FXML
     void handleFactsButtonAction(ActionEvent event) throws IOException {
-        Model.levelFlag = 2;
-        Model.levelButton(factsButton);
+        levelFlag = 2;
+        levelButton(factsButton);
     }
 
     @FXML
     void handleMapsButtonAction(ActionEvent event) throws IOException {
-        Model.levelFlag = 3;
-        Model.levelButton(mapsButton);
+        levelFlag = 3;
+        levelButton(mapsButton);
     }
 
     @FXML
     public void handleStatsButtonAction(ActionEvent event) throws IOException {
-        Model.backFlag = 1;
-        Model.statsButton(statsButton);
+        backFlag = 1;
+        statsButton(statsButton);
     }
 
     @FXML

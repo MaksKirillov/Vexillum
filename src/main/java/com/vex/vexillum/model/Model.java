@@ -1,5 +1,10 @@
-package com.vex.vexillum;
+package com.vex.vexillum.model;
 
+import com.vex.vexillum.complete.CompleteApplication;
+import com.vex.vexillum.level.LevelApplication;
+import com.vex.vexillum.menu.MenuApplication;
+import com.vex.vexillum.stats.StatsApplication;
+import com.vex.vexillum.winlose.WinLoseApplication;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -318,7 +323,7 @@ public class Model {
 
     public static int[] getStats() throws FileNotFoundException {
         int[] nums = new int[6];
-        File file = new File("src\\main\\resources\\com\\vex\\vexillum\\stats.txt");
+        File file = new File("src\\main\\resources\\com\\vex\\vexillum\\file\\stats.txt");
         Scanner scanner = new Scanner(file);
         for (int i = 0; i < 6; i++) {
             nums[i] = scanner.nextInt();
@@ -377,7 +382,7 @@ public class Model {
     public static void changeNum(int num, int i) {
         int[] nums = stats;
         nums[i] = num;
-        try (FileWriter writer = new FileWriter("src\\main\\resources\\com\\vex\\vexillum\\stats.txt", false)) {
+        try (FileWriter writer = new FileWriter("src\\main\\resources\\com\\vex\\vexillum\\file\\stats.txt", false)) {
             for (int l = 0; l < 6; l++) {
                 String number = Integer.toString(nums[l]);
                 writer.write(number + " ");
@@ -424,9 +429,9 @@ public class Model {
         int[] nums = new int[levelCount];
         String path;
         switch (levelFlag) {
-            case 1 -> path = "src\\main\\resources\\com\\vex\\vexillum\\flagStats.txt";
-            case 2 -> path = "src\\main\\resources\\com\\vex\\vexillum\\factStats.txt";
-            default -> path = "src\\main\\resources\\com\\vex\\vexillum\\mapStats.txt";
+            case 1 -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\flagStats.txt";
+            case 2 -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\factStats.txt";
+            default -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\mapStats.txt";
         }
         File file = new File(path);
         Scanner scanner = new Scanner(file);
@@ -441,9 +446,9 @@ public class Model {
         nums[i] = num;
         String path;
         switch (levelFlag) {
-            case 1 -> path = "src\\main\\resources\\com\\vex\\vexillum\\flagStats.txt";
-            case 2 -> path = "src\\main\\resources\\com\\vex\\vexillum\\factStats.txt";
-            default -> path = "src\\main\\resources\\com\\vex\\vexillum\\mapStats.txt";
+            case 1 -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\flagStats.txt";
+            case 2 -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\factStats.txt";
+            default -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\mapStats.txt";
         }
         try (FileWriter writer = new FileWriter(path, false)) {
             for (int l = 0; l < levelCount; l++) {
@@ -464,9 +469,9 @@ public class Model {
         int[] nums = getLevelStats(levelFlag);
         String path;
         switch (levelFlag) {
-            case 1 -> path = "src\\main\\resources\\com\\vex\\vexillum\\flagStats.txt";
-            case 2 -> path = "src\\main\\resources\\com\\vex\\vexillum\\factStats.txt";
-            default -> path = "src\\main\\resources\\com\\vex\\vexillum\\mapStats.txt";
+            case 1 -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\flagStats.txt";
+            case 2 -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\factStats.txt";
+            default -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\mapStats.txt";
         }
         try (FileWriter writer = new FileWriter(path, false)) {
             for (int l = 0; l < levelCount; l++) {
@@ -488,7 +493,7 @@ public class Model {
         if (backFlag == 1) {
             Stage stage = (Stage) backButton.getScene().getWindow();
             stage.close();
-            VexApplication app = new VexApplication();
+            MenuApplication app = new MenuApplication();
             app.start(stage);
         } else {
             Stage stage = (Stage) backButton.getScene().getWindow();
