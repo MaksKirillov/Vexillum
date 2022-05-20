@@ -16,7 +16,7 @@ public class MenuApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MenuApplication.class.getResource("menu-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 700);
+        Scene scene = new Scene(fxmlLoader.load(), windowWidth, windowHeight);
         primaryStage.setTitle("Карт-Опрос");
         primaryStage.setScene(scene);
         primaryStage.show();

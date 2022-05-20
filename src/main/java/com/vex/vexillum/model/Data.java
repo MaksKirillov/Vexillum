@@ -30,6 +30,10 @@ public class Data {
 
     public static final int levelCount = 65;
 
+    public static double windowHeight = 700;
+
+    public static double windowWidth = 800;
+
     public static String[] countries;
 
     static {

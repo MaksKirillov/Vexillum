@@ -22,12 +22,14 @@ public class Buttons {
     public static void backButton(Button backButton) throws IOException {
         if (backFlag == 1) {
             Stage stage = (Stage) backButton.getScene().getWindow();
-            stage.close();
+            windowHeight = backButton.getScene().getHeight();
+            windowWidth = backButton.getScene().getWidth();
             MenuApplication app = new MenuApplication();
             app.start(stage);
         } else {
             Stage stage = (Stage) backButton.getScene().getWindow();
-            stage.close();
+            windowHeight = backButton.getScene().getHeight();
+            windowWidth = backButton.getScene().getWidth();
             WinLoseApplication app = new WinLoseApplication();
             app.start(stage);
         }
@@ -36,6 +38,8 @@ public class Buttons {
 
     public static void statsButton(Button statsButton) throws IOException {
         Stage stage = (Stage) statsButton.getScene().getWindow();
+        windowHeight = statsButton.getScene().getHeight();
+        windowWidth = statsButton.getScene().getWidth();
         StatsApplication app = new StatsApplication();
         app.start(stage);
     }
@@ -43,10 +47,14 @@ public class Buttons {
     public static void levelButton(Button levelButton) throws IOException {
         if (getCompleted() == levelCount) {
             Stage stage = (Stage) levelButton.getScene().getWindow();
+            windowHeight = levelButton.getScene().getHeight();
+            windowWidth = levelButton.getScene().getWidth();
             CompleteApplication app = new CompleteApplication();
             app.start(stage);
         } else {
             Stage stage = (Stage) levelButton.getScene().getWindow();
+            windowHeight = levelButton.getScene().getHeight();
+            windowWidth = levelButton.getScene().getWidth();
             LevelApplication app = new LevelApplication();
             app.start(stage);
         }
@@ -82,11 +90,14 @@ public class Buttons {
         changeNum(num + 1, i);
         if (getCompleted() == levelCount) {
             Stage stage = (Stage) button.getScene().getWindow();
+            windowHeight = button.getScene().getHeight();
+            windowWidth = button.getScene().getWidth();
             CompleteApplication app = new CompleteApplication();
             app.start(stage);
         } else {
             Stage stage = (Stage) button.getScene().getWindow();
-            stage.close();
+            windowHeight = button.getScene().getHeight();
+            windowWidth = button.getScene().getWidth();
             WinLoseApplication app = new WinLoseApplication();
             app.start(stage);
         }

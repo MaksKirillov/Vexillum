@@ -14,7 +14,7 @@ public class LevelApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LevelApplication.class.getResource("level-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 700);
+        Scene scene = new Scene(fxmlLoader.load(), windowWidth, windowHeight);
         switch (levelFlag) {
             case 1 -> stage.setTitle("Флаги");
             case 2 -> stage.setTitle("Факты");
