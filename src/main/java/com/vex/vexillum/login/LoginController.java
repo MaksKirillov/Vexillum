@@ -42,7 +42,9 @@ public class LoginController {
 
     @FXML
     void handleEnterButtonAction(ActionEvent event) throws IOException {
-        if (loginField.getText().trim().equals("NoUsers")) {
+        if (userCount == 32) {
+            label.setText("Слишком много пользователей");
+        } else if (loginField.getText().trim().equals("NoUsers")) {
             label.setText("Некоректное имя!");
         } else if (contains(loginField.getText().trim(), users)) {
             label.setText("Такой пользователь уже есть!");
