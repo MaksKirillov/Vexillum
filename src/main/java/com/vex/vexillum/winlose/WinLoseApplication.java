@@ -17,9 +17,9 @@ public class WinLoseApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(WinLoseApplication.class.getResource("winlose-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), windowWidth, windowHeight);
         if (answerFlag) {
-            stage.setTitle("Правильно");
+            stage.setTitle("Правильно, " + currentUser);
         } else {
-            stage.setTitle("Неправильно");
+            stage.setTitle("Неправильно, " + currentUser);
         }
         stage.setScene(scene);
         stage.show();

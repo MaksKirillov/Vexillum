@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.vex.vexillum.chose.ChoseController">
@@ -37,6 +38,11 @@
                 </ImageView>
             </graphic>
         </Button>
+        <Label fx:id="label" style="-fx-background-color: #B8B3C8;">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
 
     </VBox>
     <Button fx:id="backButton" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"

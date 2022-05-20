@@ -7,8 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static com.vex.vexillum.model.Data.windowHeight;
-import static com.vex.vexillum.model.Data.windowWidth;
+import static com.vex.vexillum.model.Data.*;
 
 
 public class MenuApplication extends Application {
@@ -17,7 +16,7 @@ public class MenuApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MenuApplication.class.getResource("menu-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), windowWidth, windowHeight);
-        stage.setTitle("Карт-Опрос");
+        stage.setTitle("Карт-Опрос (" + currentUser + ")");
         stage.setScene(scene);
         stage.show();
     }

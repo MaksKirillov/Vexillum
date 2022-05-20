@@ -8,10 +8,10 @@ public class StringWorker {
 
     //Для работы со String[]
 
-    public static boolean contains(String[] countriesList) {
+    public static boolean contains(String lookingFor, String[] list) {
         boolean result = false;
-        for (String country : countriesList) {
-            if (Objects.equals(countries[chosenCountry], country)) {
+        for (String item : list) {
+            if (item.equals(lookingFor)) {
                 result = true;
                 break;
             }
@@ -19,10 +19,21 @@ public class StringWorker {
         return result;
     }
 
-    public static int increment(String countrie, String[] countriesList) {
+    public static boolean contains(String[] countriesList) {
+        boolean result = false;
+        for (String country : countriesList) {
+            if (countries[chosenCountry].equals(country)) {
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
+    public static int increment(String country, String[] countriesList) {
         int result = 0;
         for (int i = 0; i < countriesList.length; i++) {
-            if (Objects.equals(countriesList[i], countrie)) {
+            if (countriesList[i].equals(country)) {
                 result = i;
                 break;
             }

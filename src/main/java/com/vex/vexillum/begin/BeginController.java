@@ -3,6 +3,7 @@ package com.vex.vexillum.begin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import static com.vex.vexillum.model.Buttons.loadGameButton;
 import static com.vex.vexillum.model.Buttons.newGameButton;
 import static com.vex.vexillum.model.Data.backFlag;
+import static com.vex.vexillum.model.Users.noUsers;
 
 public class BeginController {
 
@@ -23,13 +25,20 @@ public class BeginController {
     private Button exitButton;
 
     @FXML
+    private Label label;
+
+    @FXML
     void initialize() {
         backFlag = 3;
     }
 
     @FXML
     void handleLoadGameButtonAction(ActionEvent event) throws IOException {
-        loadGameButton(loadGameButton);
+        if (noUsers()) {
+            label.setText("Нет пользователей!");
+        } else {
+            loadGameButton(loadGameButton);
+        }
     }
 
     @FXML

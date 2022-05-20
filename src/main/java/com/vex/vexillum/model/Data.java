@@ -32,6 +32,8 @@ public class Data {
 
     public static double windowWidth = 800;
 
+    public static String currentUser;
+
     public static String[] countries;
 
     static {

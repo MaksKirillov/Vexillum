@@ -7,8 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static com.vex.vexillum.model.Data.windowHeight;
-import static com.vex.vexillum.model.Data.windowWidth;
+import static com.vex.vexillum.model.Data.*;
 
 public class StatsApplication extends Application {
 
@@ -16,7 +15,7 @@ public class StatsApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(StatsApplication.class.getResource("stats-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), windowWidth, windowHeight);
-        stage.setTitle("Статистика");
+        stage.setTitle("Статистика (" + currentUser + ")");
         stage.setScene(scene);
         stage.show();
     }

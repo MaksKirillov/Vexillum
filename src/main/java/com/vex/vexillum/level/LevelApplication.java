@@ -16,9 +16,9 @@ public class LevelApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(LevelApplication.class.getResource("level-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), windowWidth, windowHeight);
         switch (levelFlag) {
-            case 1 -> stage.setTitle("Флаги");
-            case 2 -> stage.setTitle("Факты");
-            default -> stage.setTitle("Карты");
+            case 1 -> stage.setTitle("Флаги (" + currentUser + ")");
+            case 2 -> stage.setTitle("Факты (" + currentUser + ")");
+            default -> stage.setTitle("Карты (" + currentUser + ")");
         }
         stage.setScene(scene);
         stage.show();
