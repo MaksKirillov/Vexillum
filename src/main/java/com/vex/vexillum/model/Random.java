@@ -2,6 +2,7 @@ package com.vex.vexillum.model;
 
 import static com.vex.vexillum.model.Stats.*;
 import static com.vex.vexillum.model.Data.*;
+import static com.vex.vexillum.model.StringWorker.increment;
 
 public class Random {
 

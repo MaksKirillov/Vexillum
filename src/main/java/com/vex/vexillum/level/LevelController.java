@@ -14,6 +14,7 @@ import java.util.Objects;
 import static com.vex.vexillum.model.Buttons.*;
 import static com.vex.vexillum.model.Data.*;
 import static com.vex.vexillum.model.Random.*;
+import static com.vex.vexillum.model.StringWorker.contains;
 
 public class LevelController {
 
