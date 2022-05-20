@@ -76,7 +76,6 @@ public class CompleteController {
 
     @FXML
     void handleStatsButtonAction(ActionEvent event) throws IOException {
-        backFlag = 1;
         statsButton(statsButton);
     }
 

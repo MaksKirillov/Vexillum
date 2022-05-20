@@ -1,4 +1,4 @@
-package com.vex.vexillum.login;
+package com.vex.vexillum.chose;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,12 +10,12 @@ import java.io.IOException;
 import static com.vex.vexillum.model.Data.windowHeight;
 import static com.vex.vexillum.model.Data.windowWidth;
 
-public class LoginApplication extends Application {
+public class ChoseApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("login-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ChoseApplication.class.getResource("chose-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), windowWidth, windowHeight);
-        stage.setTitle("Новый пользователь");
+        stage.setTitle("Карт-Опрос");
         stage.setScene(scene);
         stage.show();
     }

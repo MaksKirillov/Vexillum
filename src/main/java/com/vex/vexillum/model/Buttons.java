@@ -1,7 +1,10 @@
 package com.vex.vexillum.model;
 
+import com.vex.vexillum.begin.BeginApplication;
+import com.vex.vexillum.chose.ChoseApplication;
 import com.vex.vexillum.complete.CompleteApplication;
 import com.vex.vexillum.level.LevelApplication;
+import com.vex.vexillum.login.LoginApplication;
 import com.vex.vexillum.menu.MenuApplication;
 import com.vex.vexillum.stats.StatsApplication;
 import com.vex.vexillum.winlose.WinLoseApplication;
@@ -20,20 +23,36 @@ public class Buttons {
     //Кнопки
 
     public static void backButton(Button backButton) throws IOException {
-        if (backFlag == 1) {
-            Stage stage = (Stage) backButton.getScene().getWindow();
-            windowHeight = backButton.getScene().getHeight();
-            windowWidth = backButton.getScene().getWidth();
-            MenuApplication app = new MenuApplication();
-            app.start(stage);
-        } else {
-            Stage stage = (Stage) backButton.getScene().getWindow();
-            windowHeight = backButton.getScene().getHeight();
-            windowWidth = backButton.getScene().getWidth();
-            WinLoseApplication app = new WinLoseApplication();
-            app.start(stage);
+        switch (backFlag) {
+            case 1 -> {
+                Stage stage = (Stage) backButton.getScene().getWindow();
+                windowHeight = backButton.getScene().getHeight();
+                windowWidth = backButton.getScene().getWidth();
+                MenuApplication app = new MenuApplication();
+                app.start(stage);
+            }
+            case 2 -> {
+                Stage stage = (Stage) backButton.getScene().getWindow();
+                windowHeight = backButton.getScene().getHeight();
+                windowWidth = backButton.getScene().getWidth();
+                WinLoseApplication app = new WinLoseApplication();
+                app.start(stage);
+            }
+            case 3 -> {
+                Stage stage = (Stage) backButton.getScene().getWindow();
+                windowHeight = backButton.getScene().getHeight();
+                windowWidth = backButton.getScene().getWidth();
+                BeginApplication app = new BeginApplication();
+                app.start(stage);
+            }
+            default -> {
+                Stage stage = (Stage) backButton.getScene().getWindow();
+                windowHeight = backButton.getScene().getHeight();
+                windowWidth = backButton.getScene().getWidth();
+                StatsApplication app = new StatsApplication();
+                app.start(stage);
+            }
         }
-
     }
 
     public static void statsButton(Button statsButton) throws IOException {
@@ -101,6 +120,30 @@ public class Buttons {
             WinLoseApplication app = new WinLoseApplication();
             app.start(stage);
         }
+    }
+
+    public static void loadGameButton(Button button) throws IOException {
+        Stage stage = (Stage) button.getScene().getWindow();
+        windowHeight = button.getScene().getHeight();
+        windowWidth = button.getScene().getWidth();
+        ChoseApplication app = new ChoseApplication();
+        app.start(stage);
+    }
+
+    public static void newGameButton(Button button) throws IOException {
+        Stage stage = (Stage) button.getScene().getWindow();
+        windowHeight = button.getScene().getHeight();
+        windowWidth = button.getScene().getWidth();
+        LoginApplication app = new LoginApplication();
+        app.start(stage);
+    }
+
+    public static void menuButton(Button menuButton) throws IOException {
+        Stage stage = (Stage) menuButton.getScene().getWindow();
+        windowHeight = menuButton.getScene().getHeight();
+        windowWidth = menuButton.getScene().getWidth();
+        MenuApplication app = new MenuApplication();
+        app.start(stage);
     }
 
     private static int getCompleted() throws FileNotFoundException {

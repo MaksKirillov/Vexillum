@@ -1,7 +1,6 @@
 package com.vex.vexillum.model;
 
 import java.io.IOException;
-import java.util.Objects;
 
 import static com.vex.vexillum.model.Reader.*;
 
@@ -9,7 +8,7 @@ public class Data {
 
     public static int levelFlag; // 1 - flags, 2 - facts, 3 - maps
 
-    public static int backFlag; // 1 - menu, 2 - win/lose screen
+    public static int backFlag; // 1 - menu, 2 - win/lose screen, 3 - begin screen, 4 - statistics screen
 
     public static int continentFlag; // 1 - Africa and Middle East, 2 - Americas, 3 - Asia and Oceania, 4 - Europe
 

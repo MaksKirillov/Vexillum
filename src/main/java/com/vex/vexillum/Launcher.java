@@ -1,11 +1,9 @@
 package com.vex.vexillum;
 
-import com.vex.vexillum.menu.MenuApplication;
-
-import java.io.IOException;
+import com.vex.vexillum.begin.BeginApplication;
 
 public class Launcher {
-    public static void main(String[] args) throws IOException {
-        MenuApplication.enter(args);
+    public static void main(String[] args) {
+        BeginApplication.enter(args);
     }
 }
