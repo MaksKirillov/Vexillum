@@ -7,7 +7,7 @@ import javafx.scene.text.Text;
 
 import java.io.*;
 
-import static com.vex.vexillum.model.Buttons.backButton;
+import static com.vex.vexillum.model.Buttons.*;
 import static com.vex.vexillum.model.Data.*;
 import static com.vex.vexillum.model.Stats.*;
 
@@ -27,6 +27,12 @@ public class StatsController {
 
     @FXML
     private Button allResetButton;
+
+    @FXML
+    private Button changeUserButton;
+
+    @FXML
+    private Button addUserButton;
 
     @FXML
     private Text RightFacts;
@@ -125,6 +131,18 @@ public class StatsController {
         resetLevel(2);
         resetLevel(3);
         statistic();
+    }
+
+    @FXML
+    void handleChangeUserButtonAction(ActionEvent event) throws IOException {
+        backFlag = 4;
+        loadGameButton(changeUserButton);
+    }
+
+    @FXML
+    void handleAddUserButtonAction(ActionEvent event) throws IOException {
+        backFlag = 4;
+        newGameButton(addUserButton);
     }
 
 }

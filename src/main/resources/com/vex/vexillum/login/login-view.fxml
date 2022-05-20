@@ -23,7 +23,7 @@
         </ImageView>
         <Label style="-fx-background-color: #B8B3C8;">
             <graphic>
-                <ImageView fitHeight="150.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="55.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@../images/buttons/UserNameImage.png"/>
                 </ImageView>
             </graphic>

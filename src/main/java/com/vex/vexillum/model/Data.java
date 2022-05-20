@@ -26,13 +26,21 @@ public class Data {
 
     public static boolean oneTimeFlag = false;
 
-    public static final int levelCount = 65;
-
     public static double windowHeight = 700;
 
     public static double windowWidth = 800;
 
     public static String currentUser;
+
+    public static int levelCount;
+
+    static {
+        try {
+            levelCount = oneIntReader("src\\main\\resources\\com\\vex\\vexillum\\file\\totalNumberOfLevels.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static String[] countries;
 

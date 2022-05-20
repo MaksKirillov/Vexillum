@@ -7,7 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -27,7 +26,7 @@ public class CompleteController {
     private ImageView winLoseImage;
 
     @FXML
-    void initialize() throws FileNotFoundException {
+    void initialize() {
         backFlag = 1;
         switch (levelFlag) {
             case 1 -> startFlag();
@@ -36,21 +35,21 @@ public class CompleteController {
         }
     }
 
-    private void startFlag() throws FileNotFoundException {
+    private void startFlag() {
         if (!completeFlag) {
             setWinLoseImage();
             completeFlag = true;
         }
     }
 
-    private void startFact() throws FileNotFoundException {
+    private void startFact() {
         if (!completeFact) {
             setWinLoseImage();
             completeFact = true;
         }
     }
 
-    private void startMap() throws FileNotFoundException {
+    private void startMap() {
         if (!completeMap) {
             setWinLoseImage();
             completeMap = true;

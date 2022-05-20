@@ -8,8 +8,8 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-import static com.vex.vexillum.model.Buttons.backButton;
-import static com.vex.vexillum.model.Buttons.menuButton;
+import static com.vex.vexillum.model.Buttons.*;
+import static com.vex.vexillum.model.Data.backFlag;
 import static com.vex.vexillum.model.Data.currentUser;
 import static com.vex.vexillum.model.StringWorker.contains;
 import static com.vex.vexillum.model.Users.*;
@@ -31,26 +31,33 @@ public class LoginController {
 
     @FXML
     void initialize() {
-        resetUsers();
+        updateUsers();
     }
 
     @FXML
     void handleBackButtonAction(ActionEvent event) throws IOException {
         backButton(backButton);
+        backFlag = 1;
     }
 
     @FXML
     void handleEnterButtonAction(ActionEvent event) throws IOException {
-        if (contains(loginField.getText().trim(), users)) {
-            label.setText("Такой пользователь уже есть!");
-        } else if (loginField.getText().trim().equals("NoUsers")) {
+        if (loginField.getText().trim().equals("NoUsers")) {
             label.setText("Некоректное имя!");
+        } else if (contains(loginField.getText().trim(), users)) {
+            label.setText("Такой пользователь уже есть!");
         } else if (loginField.getText().trim().isEmpty()) {
             label.setText("Имя пользователя не введено!");
         } else {
-            currentUser = loginField.getText().trim();
             addUser(loginField.getText().trim());
-            menuButton(enterButton);
+            currentUser = loginField.getText().trim();
+            currentUserInt = userCount - 1;
+            if (backFlag == 4) {
+                backFlag = 1;
+                statsButton(enterButton);
+            } else {
+                menuButton(enterButton);
+            }
         }
     }
 

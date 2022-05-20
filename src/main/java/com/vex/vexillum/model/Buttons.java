@@ -16,6 +16,7 @@ import java.io.IOException;
 
 import static com.vex.vexillum.model.Data.*;
 import static com.vex.vexillum.model.Stats.*;
+import static com.vex.vexillum.model.Users.currentUserInt;
 
 
 public class Buttons {
@@ -24,34 +25,38 @@ public class Buttons {
 
     public static void backButton(Button backButton) throws IOException {
         switch (backFlag) {
-            case 1 -> {
-                Stage stage = (Stage) backButton.getScene().getWindow();
-                windowHeight = backButton.getScene().getHeight();
-                windowWidth = backButton.getScene().getWidth();
-                MenuApplication app = new MenuApplication();
-                app.start(stage);
-            }
-            case 2 -> {
-                Stage stage = (Stage) backButton.getScene().getWindow();
-                windowHeight = backButton.getScene().getHeight();
-                windowWidth = backButton.getScene().getWidth();
-                WinLoseApplication app = new WinLoseApplication();
-                app.start(stage);
-            }
-            case 3 -> {
-                Stage stage = (Stage) backButton.getScene().getWindow();
-                windowHeight = backButton.getScene().getHeight();
-                windowWidth = backButton.getScene().getWidth();
-                BeginApplication app = new BeginApplication();
-                app.start(stage);
-            }
-            default -> {
-                Stage stage = (Stage) backButton.getScene().getWindow();
-                windowHeight = backButton.getScene().getHeight();
-                windowWidth = backButton.getScene().getWidth();
-                StatsApplication app = new StatsApplication();
-                app.start(stage);
-            }
+            case 1 -> menuButton(backButton);
+            case 2 -> winLoseButton(backButton);
+            case 3 -> beginButton(backButton);
+            default -> statsButton(backButton);
+        }
+    }
+
+    public static void beginButton(Button beginButton) throws IOException {
+        Stage stage = (Stage) beginButton.getScene().getWindow();
+        windowHeight = beginButton.getScene().getHeight();
+        windowWidth = beginButton.getScene().getWidth();
+        BeginApplication app = new BeginApplication();
+        app.start(stage);
+    }
+
+    public static void winLoseButton(Button button) throws IOException {
+        Stage stage = (Stage) button.getScene().getWindow();
+        windowHeight = button.getScene().getHeight();
+        windowWidth = button.getScene().getWidth();
+        WinLoseApplication app = new WinLoseApplication();
+        app.start(stage);
+    }
+
+    public static void levelButton(Button levelButton) throws IOException {
+        if (getCompleted() == levelCount) {
+            completeButton(levelButton);
+        } else {
+            Stage stage = (Stage) levelButton.getScene().getWindow();
+            windowHeight = levelButton.getScene().getHeight();
+            windowWidth = levelButton.getScene().getWidth();
+            LevelApplication app = new LevelApplication();
+            app.start(stage);
         }
     }
 
@@ -61,22 +66,6 @@ public class Buttons {
         windowWidth = statsButton.getScene().getWidth();
         StatsApplication app = new StatsApplication();
         app.start(stage);
-    }
-
-    public static void levelButton(Button levelButton) throws IOException {
-        if (getCompleted() == levelCount) {
-            Stage stage = (Stage) levelButton.getScene().getWindow();
-            windowHeight = levelButton.getScene().getHeight();
-            windowWidth = levelButton.getScene().getWidth();
-            CompleteApplication app = new CompleteApplication();
-            app.start(stage);
-        } else {
-            Stage stage = (Stage) levelButton.getScene().getWindow();
-            windowHeight = levelButton.getScene().getHeight();
-            windowWidth = levelButton.getScene().getWidth();
-            LevelApplication app = new LevelApplication();
-            app.start(stage);
-        }
     }
 
     public static void rightButton(Button rightButton) throws IOException {
@@ -105,14 +94,10 @@ public class Buttons {
             case 2 -> changeLevelStat(1, chosenCountry, 2);
             default -> changeLevelStat(1, chosenCountry, 3);
         }
-        int num = stats[i];
+        int num = stats[currentUserInt][i];
         changeNum(num + 1, i);
         if (getCompleted() == levelCount) {
-            Stage stage = (Stage) button.getScene().getWindow();
-            windowHeight = button.getScene().getHeight();
-            windowWidth = button.getScene().getWidth();
-            CompleteApplication app = new CompleteApplication();
-            app.start(stage);
+            completeButton(button);
         } else {
             Stage stage = (Stage) button.getScene().getWindow();
             windowHeight = button.getScene().getHeight();
@@ -120,6 +105,14 @@ public class Buttons {
             WinLoseApplication app = new WinLoseApplication();
             app.start(stage);
         }
+    }
+
+    public static void completeButton(Button completeButton) throws IOException {
+        Stage stage = (Stage) completeButton.getScene().getWindow();
+        windowHeight = completeButton.getScene().getHeight();
+        windowWidth = completeButton.getScene().getWidth();
+        CompleteApplication app = new CompleteApplication();
+        app.start(stage);
     }
 
     public static void loadGameButton(Button button) throws IOException {

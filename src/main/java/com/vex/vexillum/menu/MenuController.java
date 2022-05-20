@@ -35,6 +35,8 @@ public class MenuController {
 
     @FXML
     void initialize() throws FileNotFoundException {
+        updateStats();
+        backFlag = 3;
         if (getAllFlags() == levelCount) completeFlag = true;
         if (getAllFacts() == levelCount) completeFact = true;
         if (getAllMaps() == levelCount) completeMap = true;

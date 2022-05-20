@@ -22,7 +22,7 @@ public class Reader {
     }
 
     private static String reader(String path) throws IOException {
-        FileReader reader= new FileReader(path, StandardCharsets.UTF_8);
+        FileReader reader = new FileReader(path, StandardCharsets.UTF_8);
         Scanner scan = new Scanner(reader);
         StringBuilder builder = new StringBuilder();
         while (scan.hasNextLine()) {
@@ -31,6 +31,14 @@ public class Reader {
         }
         reader.close();
         return builder.toString();
+    }
+
+    static int oneIntReader(String path) throws IOException {
+        FileReader reader = new FileReader(path, StandardCharsets.UTF_8);
+        Scanner scan = new Scanner(reader);
+        int result = scan.nextInt();
+        reader.close();
+        return result;
     }
 
 }

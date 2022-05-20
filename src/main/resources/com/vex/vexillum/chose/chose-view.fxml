@@ -12,8 +12,9 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.vex.vexillum.chose.ChoseController">
-    <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #8D69A1;" AnchorPane.bottomAnchor="0.0"
-          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <VBox alignment="CENTER" prefHeight="554.0" prefWidth="754.0" spacing="10.0" style="-fx-background-color: #8D69A1;"
+          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0">
         <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
         </padding>
@@ -23,18 +24,27 @@
         </ImageView>
         <Label style="-fx-background-color: #B8B3C8;">
             <graphic>
-                <ImageView fitHeight="150.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitWidth="570.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@../images/buttons/ChoseUser.png"/>
                 </ImageView>
             </graphic>
         </Label>
-        <ChoiceBox fx:id="userSelect" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: #B8B3C8;"/>
+        <ChoiceBox fx:id="userSelect" prefHeight="50.0" prefWidth="570.0" style="-fx-background-color: #B8B3C8;"/>
         <Button fx:id="enterButton" minHeight="50.0" minWidth="400.0" mnemonicParsing="false"
-                onAction="#handleEnterButtonAction" prefHeight="60.0" prefWidth="400.0"
+                onAction="#handleEnterButtonAction" prefHeight="60.0" prefWidth="570.0"
                 style="-fx-background-color: #B8B3C8;" textAlignment="CENTER">
             <graphic>
-                <ImageView fitHeight="55.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="50.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@../images/buttons/EnterImage.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="deleteButton" minHeight="50.0" minWidth="400.0" mnemonicParsing="false"
+                onAction="#handleDeleteButtonAction" prefHeight="60.0" prefWidth="570.0"
+                style="-fx-background-color: #B8B3C8;" textAlignment="CENTER">
+            <graphic>
+                <ImageView fitHeight="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../images/buttons/DeleteAllUsersImage.png"/>
                 </ImageView>
             </graphic>
         </Button>

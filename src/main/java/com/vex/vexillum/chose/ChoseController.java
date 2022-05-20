@@ -10,9 +10,10 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 
-import static com.vex.vexillum.model.Buttons.backButton;
-import static com.vex.vexillum.model.Buttons.menuButton;
+import static com.vex.vexillum.model.Buttons.*;
+import static com.vex.vexillum.model.Data.backFlag;
 import static com.vex.vexillum.model.Data.currentUser;
+import static com.vex.vexillum.model.StringWorker.increment;
 import static com.vex.vexillum.model.Users.*;
 
 public class ChoseController {
@@ -24,6 +25,9 @@ public class ChoseController {
     private Button enterButton;
 
     @FXML
+    private Button deleteButton;
+
+    @FXML
     private ChoiceBox<String> userSelect;
 
     @FXML
@@ -31,7 +35,7 @@ public class ChoseController {
 
     @FXML
     void initialize() {
-        resetUsers();
+        updateUsers();
         ObservableList<String> userList = FXCollections.observableArrayList(users);
         userSelect.setItems(userList);
     }
@@ -39,6 +43,7 @@ public class ChoseController {
     @FXML
     void handleBackButtonAction(ActionEvent event) throws IOException {
         backButton(backButton);
+        backFlag = 1;
     }
 
     @FXML
@@ -47,8 +52,20 @@ public class ChoseController {
             label.setText("Не выбран пользователь!");
         } else {
             currentUser = userSelect.getValue().trim();
-            menuButton(enterButton);
+            currentUserInt = increment(currentUser, users);
+            if (backFlag == 4) {
+                backFlag = 1;
+                statsButton(enterButton);
+            } else {
+                menuButton(enterButton);
+            }
         }
+    }
+
+    @FXML
+    void handleDeleteButtonAction(ActionEvent event) throws IOException {
+        deleteAllUsers();
+        beginButton(deleteButton);
     }
 
 }

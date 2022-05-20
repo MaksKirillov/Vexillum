@@ -1,7 +1,5 @@
 package com.vex.vexillum.model;
 
-import java.util.Objects;
-
 import static com.vex.vexillum.model.Data.*;
 
 public class StringWorker {
