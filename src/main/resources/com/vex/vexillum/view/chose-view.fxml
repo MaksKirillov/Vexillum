@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.vex.vexillum.control.ChoseController">
+    <VBox alignment="CENTER" prefHeight="554.0" prefWidth="754.0" spacing="10.0" style="-fx-background-color: #8D69A1;"
+          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+
+        <ImageView pickOnBounds="true" preserveRatio="true">
+            <Image url="@../images/titles/titleImage.png"/>
+        </ImageView>
+        <Label style="-fx-background-color: #B8B3C8;">
+            <graphic>
+                <ImageView fitWidth="570.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../images/buttons/ChoseUser.png"/>
+                </ImageView>
+            </graphic>
+        </Label>
+        <ChoiceBox fx:id="userSelect" prefHeight="50.0" prefWidth="570.0" style="-fx-background-color: #B8B3C8;"/>
+        <Button fx:id="enterButton" minHeight="50.0" minWidth="400.0" mnemonicParsing="false"
+                onAction="#handleEnterButtonAction" prefHeight="60.0" prefWidth="570.0"
+                style="-fx-background-color: #B8B3C8;" textAlignment="CENTER">
+            <graphic>
+                <ImageView fitHeight="50.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../images/buttons/EnterImage.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="deleteButton" minHeight="50.0" minWidth="400.0" mnemonicParsing="false"
+                onAction="#handleDeleteButtonAction" prefHeight="60.0" prefWidth="570.0"
+                style="-fx-background-color: #B8B3C8;" textAlignment="CENTER">
+            <graphic>
+                <ImageView fitHeight="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../images/buttons/DeleteAllUsersImage.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Label fx:id="label" style="-fx-background-color: #B8B3C8;">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
+
+    </VBox>
+    <Button fx:id="backButton" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
+            onAction="#handleBackButtonAction" prefHeight="34.0" prefWidth="100.0"
+            style="-fx-background-color: #B8B3C8;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <graphic>
+            <ImageView fitHeight="20.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/buttons/BackImage.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+</AnchorPane>

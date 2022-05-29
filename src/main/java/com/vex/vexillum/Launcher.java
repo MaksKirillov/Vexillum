@@ -1,6 +1,6 @@
 package com.vex.vexillum;
 
-import com.vex.vexillum.begin.BeginApplication;
+import com.vex.vexillum.control.BeginApplication;
 
 
 public class Launcher {

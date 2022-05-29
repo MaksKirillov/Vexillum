@@ -1,13 +1,13 @@
 package com.vex.vexillum.model;
 
-import com.vex.vexillum.begin.BeginApplication;
-import com.vex.vexillum.chose.ChoseApplication;
-import com.vex.vexillum.complete.CompleteApplication;
-import com.vex.vexillum.level.LevelApplication;
-import com.vex.vexillum.login.LoginApplication;
-import com.vex.vexillum.menu.MenuApplication;
-import com.vex.vexillum.stats.StatsApplication;
-import com.vex.vexillum.winlose.WinLoseApplication;
+import com.vex.vexillum.control.BeginApplication;
+import com.vex.vexillum.control.ChoseApplication;
+import com.vex.vexillum.control.CompleteApplication;
+import com.vex.vexillum.control.LevelApplication;
+import com.vex.vexillum.control.LoginApplication;
+import com.vex.vexillum.control.MenuApplication;
+import com.vex.vexillum.control.StatsApplication;
+import com.vex.vexillum.control.WinLoseApplication;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
