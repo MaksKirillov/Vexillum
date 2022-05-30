@@ -1,8 +1,18 @@
-package com.vex.vexillum.model;
+package com.vex.vexillum.util;
 
 import static com.vex.vexillum.model.Data.*;
 
 public class StringWorker {
+
+    private static StringWorker instance;
+
+    private StringWorker() {}
+
+    public static void getInstance() {
+        if (instance == null) {
+            instance = new StringWorker();
+        }
+    }
 
     //Для работы со String[]
 

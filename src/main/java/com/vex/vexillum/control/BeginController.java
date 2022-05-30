@@ -11,7 +11,7 @@ import java.io.IOException;
 import static com.vex.vexillum.model.Buttons.loadGameButton;
 import static com.vex.vexillum.model.Buttons.newGameButton;
 import static com.vex.vexillum.model.Data.backFlag;
-import static com.vex.vexillum.model.Users.noUsers;
+import static com.vex.vexillum.model.UserWorker.noUsers;
 
 public class BeginController {
 
@@ -28,9 +28,7 @@ public class BeginController {
     private Label label;
 
     @FXML
-    void initialize() {
-        backFlag = 3;
-    }
+    void initialize() {backFlag = 3;}
 
     @FXML
     void handleLoadGameButtonAction(ActionEvent event) throws IOException {

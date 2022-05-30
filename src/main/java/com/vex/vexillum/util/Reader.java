@@ -1,4 +1,4 @@
-package com.vex.vexillum.model;
+package com.vex.vexillum.util;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -6,6 +6,16 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class Reader {
+
+    private static Reader instance;
+
+    private Reader() {}
+
+    public static void getInstance() {
+        if (instance == null) {
+            instance = new Reader();
+        }
+    }
 
     //Читалки
 
@@ -33,7 +43,7 @@ public class Reader {
         return builder.toString();
     }
 
-    static int oneIntReader(String path) throws IOException {
+    public static int oneIntReader(String path) throws IOException {
         FileReader reader = new FileReader(path, StandardCharsets.UTF_8);
         Scanner scan = new Scanner(reader);
         int result = scan.nextInt();

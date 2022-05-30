@@ -1,6 +1,7 @@
 
 package com.vex.vexillum.control;
 
+import com.vex.vexillum.util.Stats;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,7 +12,7 @@ import java.io.IOException;
 
 import static com.vex.vexillum.model.Buttons.*;
 import static com.vex.vexillum.model.Data.*;
-import static com.vex.vexillum.model.Stats.*;
+import static com.vex.vexillum.util.Stats.*;
 
 public class MenuController {
 
@@ -35,7 +36,7 @@ public class MenuController {
 
     @FXML
     void initialize() throws FileNotFoundException {
-        updateStats();
+        Stats.getInstance();
         backFlag = 3;
         if (getAllFlags() == levelCount) completeFlag = true;
         if (getAllFacts() == levelCount) completeFact = true;

@@ -9,7 +9,7 @@ import java.io.*;
 
 import static com.vex.vexillum.model.Buttons.*;
 import static com.vex.vexillum.model.Data.*;
-import static com.vex.vexillum.model.Stats.*;
+import static com.vex.vexillum.util.Stats.*;
 
 public class StatsController {
 

@@ -1,10 +1,20 @@
-package com.vex.vexillum.model;
+package com.vex.vexillum.util;
 
-import static com.vex.vexillum.model.Stats.*;
+import static com.vex.vexillum.util.Stats.*;
 import static com.vex.vexillum.model.Data.*;
-import static com.vex.vexillum.model.StringWorker.increment;
+import static com.vex.vexillum.util.StringWorker.increment;
 
 public class Random {
+
+    private static Random instance;
+
+    private Random() {}
+
+    public static void getInstance() {
+        if (instance == null) {
+            instance = new Random();
+        }
+    }
 
     //Рандомайзер
 
@@ -42,6 +52,7 @@ public class Random {
     //Рандомайзер кнопок
 
     public static int[] buttonsRandomizer() {
+        StringWorker.getInstance();
         String[] countriesList;
         int[] nums;
         switch (continentFlag) {

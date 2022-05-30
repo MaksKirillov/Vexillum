@@ -11,8 +11,8 @@ import java.io.IOException;
 import static com.vex.vexillum.model.Buttons.*;
 import static com.vex.vexillum.model.Data.backFlag;
 import static com.vex.vexillum.model.Data.currentUser;
-import static com.vex.vexillum.model.StringWorker.contains;
-import static com.vex.vexillum.model.Users.*;
+import static com.vex.vexillum.util.StringWorker.contains;
+import static com.vex.vexillum.model.UserWorker.*;
 
 
 public class LoginController {

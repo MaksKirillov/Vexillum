@@ -8,6 +8,7 @@ import com.vex.vexillum.control.LoginApplication;
 import com.vex.vexillum.control.MenuApplication;
 import com.vex.vexillum.control.StatsApplication;
 import com.vex.vexillum.control.WinLoseApplication;
+import com.vex.vexillum.util.Stats;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -15,8 +16,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static com.vex.vexillum.model.Data.*;
-import static com.vex.vexillum.model.Stats.*;
-import static com.vex.vexillum.model.Users.currentUserInt;
+import static com.vex.vexillum.util.Stats.*;
+import static com.vex.vexillum.model.UserWorker.currentUserInt;
 
 
 public class Buttons {
@@ -89,6 +90,7 @@ public class Buttons {
     }
 
     private static void rightWrongButton(Button button, int i) throws IOException {
+        Stats.updateStats();
         switch (levelFlag) {
             case 1 -> changeLevelStat(1, chosenCountry, 1);
             case 2 -> changeLevelStat(1, chosenCountry, 2);

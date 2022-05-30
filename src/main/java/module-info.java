@@ -9,4 +9,6 @@ module com.vex.vexillum {
     opens com.vex.vexillum.model to javafx.fxml;
     exports com.vex.vexillum.control;
     opens com.vex.vexillum.control to javafx.fxml;
+    exports com.vex.vexillum.util;
+    opens com.vex.vexillum.util to javafx.fxml;
 }

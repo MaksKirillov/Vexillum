@@ -5,7 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
@@ -13,8 +13,8 @@ import java.io.IOException;
 import static com.vex.vexillum.model.Buttons.*;
 import static com.vex.vexillum.model.Data.backFlag;
 import static com.vex.vexillum.model.Data.currentUser;
-import static com.vex.vexillum.model.StringWorker.increment;
-import static com.vex.vexillum.model.Users.*;
+import static com.vex.vexillum.util.StringWorker.increment;
+import static com.vex.vexillum.model.UserWorker.*;
 
 public class ChoseController {
 
@@ -28,7 +28,7 @@ public class ChoseController {
     private Button deleteButton;
 
     @FXML
-    private ChoiceBox<String> userSelect;
+    private ComboBox<String> userSelect;
 
     @FXML
     private Label label;
@@ -37,6 +37,7 @@ public class ChoseController {
     void initialize() {
         updateUsers();
         ObservableList<String> userList = FXCollections.observableArrayList(users);
+        userSelect.setStyle("-fx-font: 24px \"Calibri\";");
         userSelect.setItems(userList);
     }
 

@@ -1,10 +1,38 @@
 package com.vex.vexillum.model;
 
+import com.vex.vexillum.util.Reader;
+
 import java.io.IOException;
 
-import static com.vex.vexillum.model.Reader.*;
+import static com.vex.vexillum.util.Reader.*;
 
 public class Data {
+
+    private static Data instance;
+
+    private Data() {
+        try {
+            Reader.getInstance();
+            String path = "src\\main\\resources\\com\\vex\\vexillum\\file\\";
+            levelCount = oneIntReader(path + "totalNumberOfLevels.txt");
+            countries = lineReader(path + "countries.txt");
+            countriesAfricaMiddleEast = lineReader(path + "countriesAfricaMiddleEast.txt");
+            countriesAmericas = lineReader(path + "countriesAmericas.txt");
+            countriesAsiaOceania = lineReader(path + "countriesAsiaOceania.txt");
+            countriesEurope = lineReader(path + "countriesEurope.txt");
+            pathFlags = lineReader(path + "flagPath.txt");
+            pathMaps = lineReader(path + "mapPath.txt");
+            facts = factReader(path + "facts.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void getInstance() {
+        if (instance == null) {
+            instance = new Data();
+        }
+    }
 
     public static int levelFlag; // 1 - flags, 2 - facts, 3 - maps
 
@@ -34,92 +62,20 @@ public class Data {
 
     public static int levelCount;
 
-    static {
-        try {
-            levelCount = oneIntReader("src\\main\\resources\\com\\vex\\vexillum\\file\\totalNumberOfLevels.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static String[] countries;
-
-    static {
-        try {
-            countries = lineReader("src\\main\\resources\\com\\vex\\vexillum\\file\\countries.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public static String[] countriesAfricaMiddleEast;
 
-    static {
-        try {
-            countriesAfricaMiddleEast = lineReader("src\\main\\resources\\com\\vex\\vexillum\\file\\countriesAfricaMiddleEast.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static String[] countriesAmericas;
-
-    static {
-        try {
-            countriesAmericas = lineReader("src\\main\\resources\\com\\vex\\vexillum\\file\\countriesAmericas.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public static String[] countriesAsiaOceania;
 
-    static {
-        try {
-            countriesAsiaOceania = lineReader("src\\main\\resources\\com\\vex\\vexillum\\file\\countriesAsiaOceania.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static String[] countriesEurope;
-
-    static {
-        try {
-            countriesEurope = lineReader("src\\main\\resources\\com\\vex\\vexillum\\file\\countriesEurope.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public static String[] pathFlags;
 
-    static {
-        try {
-            pathFlags = lineReader("src\\main\\resources\\com\\vex\\vexillum\\file\\flagPath.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static String[] pathMaps;
 
-    static {
-        try {
-            pathMaps = lineReader("src\\main\\resources\\com\\vex\\vexillum\\file\\mapPath.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static String[] facts;
-
-    static {
-        try {
-            facts = factReader("src\\main\\resources\\com\\vex\\vexillum\\file\\facts.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 }

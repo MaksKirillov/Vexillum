@@ -1,4 +1,6 @@
-package com.vex.vexillum.model;
+package com.vex.vexillum.util;
+
+import com.vex.vexillum.model.Data;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,26 +9,51 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import static com.vex.vexillum.model.Data.levelCount;
-import static com.vex.vexillum.model.Users.*;
+import static com.vex.vexillum.model.UserWorker.*;
 
 public class Stats {
 
-    //Всё что связано с stats.txt
+    private static Stats instance;
 
-    public static int[][] stats; // right flags, wrong flags, right facts, wrong facts, right maps, wrong maps
-
-    static {
+    private Stats() {
         try {
+            Data.getInstance();
+            updateUserCount();
+            if (userCount == 0) {
+                flagStats = new int[levelCount];
+                factStats = new int[levelCount];
+                mapStats = new int[levelCount];
+            } else {
+                flagStats = getLevelStats(1)[currentUserInt];
+                factStats = getLevelStats(2)[currentUserInt];
+                mapStats = getLevelStats(3)[currentUserInt];
+            }
             stats = getStats();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
+    public static void getInstance() {
+        if (instance == null) {
+            instance = new Stats();
+        }
+    }
+
+    public static void updateStats() {
+        instance = new Stats();
+    }
+
+    private static final String pathStart = "src\\main\\resources\\com\\vex\\vexillum\\file\\";
+
+    //Всё что связано с stats.txt
+
+    public static int[][] stats; // right flags, wrong flags, right facts, wrong facts, right maps, wrong maps
+
     public static int[][] getStats() throws FileNotFoundException {
         updateUserCount();
         int[][] nums = new int[userCount][6];
-        File file = new File("src\\main\\resources\\com\\vex\\vexillum\\file\\stats.txt");
+        File file = new File(pathStart + "stats.txt");
         Scanner scanner = new Scanner(file);
         for (int j = 0; j < userCount; j++) {
             for (int i = 0; i < 6; i++) {
@@ -87,7 +114,7 @@ public class Stats {
     public static void changeNum(int num, int i) {
         int[][] nums = stats;
         nums[currentUserInt][i] = num;
-        try (FileWriter writer = new FileWriter("src\\main\\resources\\com\\vex\\vexillum\\file\\stats.txt", false)) {
+        try (FileWriter writer = new FileWriter(pathStart + "stats.txt", false)) {
             for (int j = 0; j < userCount; j++) {
                 for (int l = 0; l < 6; l++) {
                     String number = Integer.toString(nums[j][l]);
@@ -105,68 +132,17 @@ public class Stats {
 
     public static int[] flagStats;
 
-    static {
-        updateUserCount();
-        if (userCount == 0) {
-            flagStats = new int[levelCount];
-        } else {
-            try {
-                flagStats = getLevelStats(1)[currentUserInt];
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     public static int[] factStats;
 
-    static {
-        updateUserCount();
-        if (userCount == 0) {
-            factStats = new int[levelCount];
-        } else {
-            try {
-                factStats = getLevelStats(2)[currentUserInt];
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     public static int[] mapStats;
-
-    static {
-        updateUserCount();
-        if (userCount == 0) {
-            mapStats = new int[levelCount];
-        } else {
-            try {
-                mapStats = getLevelStats(3)[currentUserInt];
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public static void updateStats() {
-        updateUserCount();
-        try {
-            stats = getStats();
-            flagStats = getLevelStats(1)[currentUserInt];
-            factStats = getLevelStats(2)[currentUserInt];
-            mapStats = getLevelStats(3)[currentUserInt];
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
     public static int[][] getLevelStats(int levelFlag) throws FileNotFoundException {
         int[][] nums = new int[userCount][levelCount];
         String path;
         switch (levelFlag) {
-            case 1 -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\flagStats.txt";
-            case 2 -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\factStats.txt";
-            default -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\mapStats.txt";
+            case 1 -> path = pathStart + "flagStats.txt";
+            case 2 -> path = pathStart + "factStats.txt";
+            default -> path = pathStart + "mapStats.txt";
         }
         File file = new File(path);
         Scanner scanner = new Scanner(file);
@@ -195,9 +171,9 @@ public class Stats {
     private static void writer(int levelFlag, int[][] nums) {
         String path;
         switch (levelFlag) {
-            case 1 -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\flagStats.txt";
-            case 2 -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\factStats.txt";
-            default -> path = "src\\main\\resources\\com\\vex\\vexillum\\file\\mapStats.txt";
+            case 1 -> path = pathStart + "flagStats.txt";
+            case 2 -> path = pathStart + "factStats.txt";
+            default -> path = pathStart + "mapStats.txt";
         }
         try (FileWriter writer = new FileWriter(path, false)) {
             for (int j = 0; j < userCount; j++) {
@@ -218,9 +194,9 @@ public class Stats {
     }
 
     public static void addNewUserInfo() {
-        addNewLevels("src\\main\\resources\\com\\vex\\vexillum\\file\\flagStats.txt");
-        addNewLevels("src\\main\\resources\\com\\vex\\vexillum\\file\\factStats.txt");
-        addNewLevels("src\\main\\resources\\com\\vex\\vexillum\\file\\mapStats.txt");
+        addNewLevels(pathStart + "flagStats.txt");
+        addNewLevels(pathStart + "factStats.txt");
+        addNewLevels(pathStart + "mapStats.txt");
         addNewStats();
     }
 
@@ -237,7 +213,7 @@ public class Stats {
     }
 
     public static void addNewStats() {
-        try (FileWriter writer = new FileWriter("src\\main\\resources\\com\\vex\\vexillum\\file\\stats.txt", true)) {
+        try (FileWriter writer = new FileWriter(pathStart + "stats.txt", true)) {
             for (int l = 0; l < 6; l++) {
                 writer.write(0 + " ");
             }

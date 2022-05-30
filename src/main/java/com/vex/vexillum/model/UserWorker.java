@@ -2,13 +2,12 @@ package com.vex.vexillum.model;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
-import static com.vex.vexillum.model.Reader.lineReader;
-import static com.vex.vexillum.model.Stats.addNewUserInfo;
+import static com.vex.vexillum.util.Reader.lineReader;
+import static com.vex.vexillum.util.Stats.addNewUserInfo;
 
-public class Users {
-
-    public static String[] users;
+public class UserWorker {
 
     public static int userCount;
 
@@ -22,6 +21,8 @@ public class Users {
             userCount = users.length;
         }
     }
+
+    public static String[] users;
 
     static {
         try {
@@ -46,7 +47,7 @@ public class Users {
     public static void addUser(String user) {
         addNewUserInfo();
         boolean append = !noUsers();
-        try (FileWriter writer = new FileWriter("src\\main\\resources\\com\\vex\\vexillum\\file\\users.txt", append)) {
+        try (FileWriter writer = new FileWriter("src\\main\\resources\\com\\vex\\vexillum\\file\\users.txt", StandardCharsets.UTF_8, append)) {
             writer.write(user + "\n");
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
@@ -64,7 +65,7 @@ public class Users {
     }
 
     private static void deleter(String path, String change) {
-        try (FileWriter writer = new FileWriter(path, false)) {
+        try (FileWriter writer = new FileWriter(path, StandardCharsets.UTF_8, false)) {
             writer.write(change);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

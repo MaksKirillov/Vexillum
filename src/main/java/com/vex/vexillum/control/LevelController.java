@@ -1,6 +1,7 @@
 package com.vex.vexillum.control;
 
 import com.vex.vexillum.Launcher;
+import com.vex.vexillum.util.Random;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,8 +14,8 @@ import java.util.Objects;
 
 import static com.vex.vexillum.model.Buttons.*;
 import static com.vex.vexillum.model.Data.*;
-import static com.vex.vexillum.model.Random.*;
-import static com.vex.vexillum.model.StringWorker.contains;
+import static com.vex.vexillum.util.Random.*;
+import static com.vex.vexillum.util.StringWorker.contains;
 
 public class LevelController {
 
@@ -38,6 +39,7 @@ public class LevelController {
 
     @FXML
     void initialize() {
+        Random.getInstance();
         if (!oneTimeFlag) level();
         oneTimeFlag = true;
     }

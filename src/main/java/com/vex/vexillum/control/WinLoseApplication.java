@@ -17,9 +17,9 @@ public class WinLoseApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(WinLoseApplication.class.getResource("/com/vex/vexillum/view/winlose-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), windowWidth, windowHeight);
         if (answerFlag) {
-            stage.setTitle("Правильно, " + currentUser);
+            stage.setTitle("Правильно, " + currentUser + "!");
         } else {
-            stage.setTitle("Неправильно, " + currentUser);
+            stage.setTitle("Неправильно, " + currentUser + "!");
         }
         stage.setScene(scene);
         stage.show();
