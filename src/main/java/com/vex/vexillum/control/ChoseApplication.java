@@ -19,6 +19,4 @@ public class ChoseApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
-    public static void enter() {launch();}
 }
