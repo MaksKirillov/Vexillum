@@ -53,7 +53,6 @@ public class LoginController {
         } else {
             addUser(loginField.getText().trim());
             currentUser = loginField.getText().trim();
-            currentUserInt = userCount - 1;
             if (backFlag == 4) {
                 backFlag = 1;
                 statsButton(enterButton);

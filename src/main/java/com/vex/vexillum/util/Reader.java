@@ -31,7 +31,15 @@ public class Reader {
         return result;
     }
 
-    private static String reader(String path) throws IOException {
+    public static int oneIntReader(String path) throws IOException {
+        FileReader reader = new FileReader(path, StandardCharsets.UTF_8);
+        Scanner scan = new Scanner(reader);
+        int result = scan.nextInt();
+        reader.close();
+        return result;
+    }
+
+    public static String reader(String path) throws IOException {
         FileReader reader = new FileReader(path, StandardCharsets.UTF_8);
         Scanner scan = new Scanner(reader);
         StringBuilder builder = new StringBuilder();
@@ -41,14 +49,6 @@ public class Reader {
         }
         reader.close();
         return builder.toString();
-    }
-
-    public static int oneIntReader(String path) throws IOException {
-        FileReader reader = new FileReader(path, StandardCharsets.UTF_8);
-        Scanner scan = new Scanner(reader);
-        int result = scan.nextInt();
-        reader.close();
-        return result;
     }
 
 }

@@ -13,10 +13,12 @@ import static com.vex.vexillum.model.Data.windowWidth;
 public class ChoseApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ChoseApplication.class.getResource("/com/vex/vexillum/view/chose-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ChoseApplication.class.getResource("/com/vex/vexillum/view/chose-.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), windowWidth, windowHeight);
         stage.setTitle("Карт-Опрос");
         stage.setScene(scene);
         stage.show();
     }
+
+    public static void enter() {launch();}
 }

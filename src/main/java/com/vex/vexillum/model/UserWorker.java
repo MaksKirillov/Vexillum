@@ -9,6 +9,8 @@ import static com.vex.vexillum.util.Stats.addNewUserInfo;
 
 public class UserWorker {
 
+    private static final String pathStart = "src\\main\\resources\\com\\vex\\vexillum\\file\\";
+
     public static int userCount;
 
     public static int currentUserInt;
@@ -26,7 +28,7 @@ public class UserWorker {
 
     static {
         try {
-            users = lineReader("src\\main\\resources\\com\\vex\\vexillum\\file\\users.txt");
+            users = lineReader(pathStart + "users.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -34,7 +36,7 @@ public class UserWorker {
 
     public static void updateUsers() {
         try {
-            users = lineReader("src\\main\\resources\\com\\vex\\vexillum\\file\\users.txt");
+            users = lineReader(pathStart + "users.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -47,20 +49,21 @@ public class UserWorker {
     public static void addUser(String user) {
         addNewUserInfo();
         boolean append = !noUsers();
-        try (FileWriter writer = new FileWriter("src\\main\\resources\\com\\vex\\vexillum\\file\\users.txt", StandardCharsets.UTF_8, append)) {
+        try (FileWriter writer = new FileWriter(pathStart + "users.txt", StandardCharsets.UTF_8, append)) {
             writer.write(user + "\n");
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
         updateUserCount();
+        currentUserInt = userCount - 1;
     }
 
     public static void deleteAllUsers() {
-        deleter("src\\main\\resources\\com\\vex\\vexillum\\file\\users.txt", "NoUsers");
-        deleter("src\\main\\resources\\com\\vex\\vexillum\\file\\stats.txt", "");
-        deleter("src\\main\\resources\\com\\vex\\vexillum\\file\\flagStats.txt", "");
-        deleter("src\\main\\resources\\com\\vex\\vexillum\\file\\factStats.txt", "");
-        deleter("src\\main\\resources\\com\\vex\\vexillum\\file\\mapStats.txt", "");
+        deleter(pathStart + "users.txt", "NoUsers");
+        deleter(pathStart + "stats.txt", "");
+        deleter(pathStart + "flagStats.txt", "");
+        deleter(pathStart + "factStats.txt", "");
+        deleter(pathStart + "mapStats.txt", "");
         updateUserCount();
     }
 

@@ -200,7 +200,7 @@ public class Stats {
         addNewStats();
     }
 
-    public static void addNewLevels(String path) {
+    private static void addNewLevels(String path) {
         try (FileWriter writer = new FileWriter(path, true)) {
             for (int l = 0; l < levelCount; l++) {
                 writer.write(0 + " ");
@@ -212,7 +212,7 @@ public class Stats {
 
     }
 
-    public static void addNewStats() {
+    private static void addNewStats() {
         try (FileWriter writer = new FileWriter(pathStart + "stats.txt", true)) {
             for (int l = 0; l < 6; l++) {
                 writer.write(0 + " ");

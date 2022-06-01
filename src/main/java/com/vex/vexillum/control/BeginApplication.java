@@ -24,7 +24,7 @@ public class BeginApplication extends Application {
         stage.show();
     }
 
-    public static void enter(String[] args) {
+    public static void enter() {
         launch();
     }
 }
