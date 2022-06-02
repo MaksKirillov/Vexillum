@@ -9,8 +9,8 @@ public class RandomTest {
     public void randomizer() {
         Random.getInstance();
         for (int i = 0; i < 100; i++) {
-            Assertions.assertNotEquals(0, Random.randomizer(1, 5));
-            Assertions.assertNotEquals(6, Random.randomizer(1, 5));
+            int num = Random.randomizer(1, 5);
+            Assertions.assertTrue(num > 0 && num < 6);
         }
     }
 
